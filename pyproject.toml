@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "llm-japanese-models"
+version = "0.1.0"
+description = ""
+authors = ["Michihiro Nakamura <nakamichi@nakamichi.org>"]
+readme = "README.md"
+packages = [{include = "llm_japanese_models", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+llm = "^0.6.1"
+torch = "^2.0.1"
+transformers = "^4.31.0"
+accelerate = "^0.21.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+ruff = "^0.0.282"
+pytest = "^7.4.0"
+
+[tool.poetry.plugins.llm]
+open_calm = "llm_japanese_models.open_calm"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
